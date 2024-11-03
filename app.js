@@ -1,42 +1,39 @@
-import React, { useState } from 'react';
-import './App.css';
+import React, { useState } from "react";
+import"./App.css";
 
-function App() {
-    const [tasks, setTasks] = useState([]);
-    const [inputValue, setInputValue] = useState('');
+const App = () => {
 
-    const handleAddTask = () => {
-        if (inputValue.trim() !== '') {
-            setTasks([...tasks, inputValue]);
-            setInputValue('');
-        }
-    };
-
-    const handleInputChange = (e) => {
-        setInputValue(e.target.value);
-    };
+    const [text, setText] = useState("");
+    const textChangehadler = (event) =>{
+        setText(event.target.value);
+    }
 
     return (
-        <div className="App">
-            <h1>Todo List</h1>
-            <div className="input-container">
-                <input
-                    type="text"
-                    value={inputValue}
-                    onChange={handleInputChange}
-                    placeholder="할 일을 입력하세요"
-                />
-                <button onClick={handleAddTask}>추가하기</button>
-            </div>
-            <div className="task-list">
-                {tasks.map((task, index) => (
-                    <div key={index} className="task-card">
-                        {task}
+        
+        <div classText="app-style">
+            {useSyncExternalStore.map(function(item)){
+                return(
+                    <div>
+                        &nbsp;
+                        <input
+                        value={text}
+                        onChange={(event)=> {
+                            setText(event.target.value);
+                        }}/>
                     </div>
-                ))}
-            </div>
-        </div>
-    );
-}
+                    <div classText="component-style">
+                    </div>
+                );
+            }
+        };
+
+
+
+
+
+const button = () => {
+    return <button onClick={clickAddButtonHandler}
+    </div>
+};
 
 export default App;
